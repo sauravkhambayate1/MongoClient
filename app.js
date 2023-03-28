@@ -1,0 +1,11 @@
+const express = require('express')
+const app = express()
+const bodyParser = require('body-parser')
+const studentRouter = require('./routes/student')
+const dotenv=require("dotenv")
+dotenv.config()
+app.use(bodyParser.json())
+app.use(studentRouter)
+app.listen(process.env.PORT, ()=>{
+   console.log('Server is running on port 6000')
+})
